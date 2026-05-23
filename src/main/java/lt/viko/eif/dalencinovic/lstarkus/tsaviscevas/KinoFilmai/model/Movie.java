@@ -9,6 +9,10 @@ import java.util.List;
  */
 @Entity
 @Table(name = "movie")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "movie_id")
+)
 public class Movie extends BaseEntity {
 
     @ManyToOne
@@ -18,6 +22,7 @@ public class Movie extends BaseEntity {
     @Column(nullable = false)
     private String title;
 
+    @Column(name = "movie_year")
     private String year;
 
     private String released;

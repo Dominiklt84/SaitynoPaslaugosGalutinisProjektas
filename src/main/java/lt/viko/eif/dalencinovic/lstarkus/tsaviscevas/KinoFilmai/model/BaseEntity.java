@@ -9,7 +9,7 @@ import jakarta.persistence.MappedSuperclass;
  * Base entity class that provides ID field for all entities.
  */
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
     /**
      * Primary key identifier.

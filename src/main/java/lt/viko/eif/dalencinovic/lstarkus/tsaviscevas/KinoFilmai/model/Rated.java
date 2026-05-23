@@ -1,13 +1,16 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  * Represents movie age rating.
  */
 @Entity
 @Table(name = "rated")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "rated_id")
+)
 public class Rated extends BaseEntity {
 
     private String title;
