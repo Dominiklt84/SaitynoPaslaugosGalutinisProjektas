@@ -4,7 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="d3a28d24-51f5-44b2-9f90-d522f2bb1814" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.java" afterDir="false" />
@@ -18,9 +17,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.class" afterDir="false" />
     </list>
-=======
     <list default="true" id="d3a28d24-51f5-44b2-9f90-d522f2bb1814" name="Changes" comment="" />
->>>>>>> d67799fa0f9a7c6ff02163785100238f65cb6ed8
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,16 +131,12 @@
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-<<<<<<< HEAD
-}]]></component>
+</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\SAIMON\IdeaProjects\SaitynoPaslaugosGalutinisProjektas-main\src\main\resources\db\changelog" />
     </key>
   </component>
-=======
-}</component>
->>>>>>> d67799fa0f9a7c6ff02163785100238f65cb6ed8
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
