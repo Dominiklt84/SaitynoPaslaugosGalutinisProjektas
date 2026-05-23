@@ -1,0 +1,29 @@
+package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+/**
+ * Represents movie country.
+ */
+@Entity
+@Table(name = "country")
+public class Country extends BaseEntity {
+
+    private String name;
+
+    public Country() {
+    }
+
+    public Country(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
