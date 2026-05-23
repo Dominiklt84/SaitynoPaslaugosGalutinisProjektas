@@ -1,0 +1,4 @@
+CREATE TABLE rated (
+    rated_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL
+);
