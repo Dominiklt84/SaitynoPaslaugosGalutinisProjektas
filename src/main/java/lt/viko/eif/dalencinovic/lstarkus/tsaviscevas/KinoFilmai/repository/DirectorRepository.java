@@ -4,10 +4,13 @@ import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.Director;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 /**
  * Repository interface for Director entity.
  * Provides CRUD operations for Director.
  */
 @Repository
 public interface DirectorRepository extends JpaRepository<Director, Long> {
+    Optional<Director> findByFirstNameAndLastName(String firstName, String lastName);
 }

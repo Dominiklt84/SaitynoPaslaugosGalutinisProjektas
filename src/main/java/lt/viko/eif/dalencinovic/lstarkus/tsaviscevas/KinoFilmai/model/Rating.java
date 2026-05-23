@@ -1,23 +1,26 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 /**
  * Represents movie rating.
  */
 @Entity
 @Table(name = "rating")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "rating_id")
+)
 public class Rating extends BaseEntity {
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
     private String source;
 
+    @Column(name = "rating_value")
     private String value;
 
     public Rating() {

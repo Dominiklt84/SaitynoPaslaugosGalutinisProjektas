@@ -1,5 +1,7 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -8,6 +10,10 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "writer")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "writer_id")
+)
 public class Writer extends BaseEntity {
 
     private String firstName;

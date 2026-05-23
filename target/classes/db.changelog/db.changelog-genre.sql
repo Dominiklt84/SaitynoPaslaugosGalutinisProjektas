@@ -1,0 +1,4 @@
+CREATE TABLE genre (
+    genre_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL
+);

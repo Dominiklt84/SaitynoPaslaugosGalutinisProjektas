@@ -61,4 +61,22 @@ public class MovieController {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/search")
+    public List<Movie> searchMovies(@RequestParam String title) {
+        return movieService.searchMovies(title);
+    }
+
+    @GetMapping("/omdb")
+    public ResponseEntity<Movie> getMovieFromOmdb(
+            @RequestParam String title) {
+
+        Movie movie = movieService.getOrFetchMovie(title);
+
+        if (movie == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(movie);
+    }
 }

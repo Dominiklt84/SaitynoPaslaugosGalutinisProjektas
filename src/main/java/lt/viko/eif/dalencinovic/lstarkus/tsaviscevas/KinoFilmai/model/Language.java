@@ -1,5 +1,7 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -8,6 +10,10 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "language")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "language_id")
+)
 public class Language extends BaseEntity {
 
     private String name;
