@@ -6,6 +6,114 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd46131-b901-4e6f-a4a4-81f0410ffe8d" name="Changes" comment="Sukurtas movie controller. REST POST/GET/DELETE metodai.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/mapper/OmdbMovieMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Actor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Country.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Director.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Language.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/MovieView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rating.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Writer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/ActorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/CountryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/DirectorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/GenreRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/LanguageRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieViewRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatedRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatingRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/WriterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-actor.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-country.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-director.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-genre.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-language.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-actors.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-countries.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-directors.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-genres.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-languages.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-view.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie-writers.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-movie.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-rated.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-rating.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-writer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movie-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movies.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-actor.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-country.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-director.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-genre.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-language.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-master.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-actors.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-countries.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-directors.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-genres.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-languages.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-view.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie-writers.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-movie.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-rated.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-rating.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/changelog/db.changelog-writer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse$OmdbRatingResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/mapper/OmdbMovieMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Actor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Director.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Genre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Language.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/MovieView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rating.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Writer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/ActorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/CountryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/DirectorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/GenreRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/LanguageRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieViewRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatedRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/WriterRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/movie-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/movies.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,10 +208,16 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.KinoFilmaiApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -133,8 +247,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
       </set>
     </attachedChunks>
   </component>
@@ -151,6 +265,11 @@
       <workItem from="1779526684568" duration="7457000" />
       <workItem from="1779541837933" duration="177000" />
       <workItem from="1779556314482" duration="340000" />
+      <workItem from="1779557022849" duration="86000" />
+      <workItem from="1779557204513" duration="12000" />
+      <workItem from="1779648212449" duration="24000" />
+      <workItem from="1779912601782" duration="58000" />
+      <workItem from="1779984149978" duration="250000" />
     </task>
     <servers />
   </component>
