@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.CollectionModel;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
@@ -18,34 +23,74 @@ public class MovieController {
     }
 
     @GetMapping
-    public List<Movie> getAllMovies() {
-        return movieService.getAllMovies();
+    public CollectionModel<EntityModel<Movie>> getAllMovies() {
+
+        List<EntityModel<Movie>> movies =
+                movieService.getAllMovies()
+                        .stream()
+                        .map(movie -> EntityModel.of(movie,
+                                linkTo(methodOn(MovieController.class)
+                                        .getMovieById(movie.getId()))
+                                        .withSelfRel()))
+                        .toList();
+
+        return CollectionModel.of(
+                movies,
+                linkTo(methodOn(MovieController.class)
+                        .getAllMovies())
+                        .withSelfRel()
+        );
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@PathVariable Long id) {
+    public ResponseEntity<EntityModel<Movie>> getMovieById(@PathVariable Long id) {
+
         return movieService.getMovieById(id)
+                .map(movie -> EntityModel.of(movie,
+                        linkTo(methodOn(MovieController.class)
+                                .getMovieById(id))
+                                .withSelfRel(),
+
+                        linkTo(methodOn(MovieController.class)
+                                .getAllMovies())
+                                .withRel("all-movies")
+                ))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Movie createMovie(@RequestBody Movie movie) {
-        return movieService.saveMovie(movie);
+    public ResponseEntity<EntityModel<Movie>> createMovie(@RequestBody Movie movie) {
+        Movie savedMovie = movieService.saveMovie(movie);
+
+        EntityModel<Movie> model = EntityModel.of(savedMovie,
+                linkTo(methodOn(MovieController.class).getMovieById(savedMovie.getId())).withSelfRel(),
+                linkTo(methodOn(MovieController.class).getAllMovies()).withRel("all-movies")
+        );
+
+        return ResponseEntity
+                .created(linkTo(methodOn(MovieController.class).getMovieById(savedMovie.getId())).toUri())
+                .body(model);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Movie> updateMovie(@PathVariable Long id,
-                                             @RequestBody Movie updatedMovie) {
+    public ResponseEntity<EntityModel<Movie>> updateMovie(@PathVariable Long id,
+                                                          @RequestBody Movie updatedMovie) {
 
         return movieService.getMovieById(id)
                 .map(movie -> {
-
                     movie.setTitle(updatedMovie.getTitle());
                     movie.setYear(updatedMovie.getYear());
                     movie.setPlot(updatedMovie.getPlot());
 
-                    return ResponseEntity.ok(movieService.saveMovie(movie));
+                    Movie savedMovie = movieService.saveMovie(movie);
+
+                    EntityModel<Movie> model = EntityModel.of(savedMovie,
+                            linkTo(methodOn(MovieController.class).getMovieById(id)).withSelfRel(),
+                            linkTo(methodOn(MovieController.class).getAllMovies()).withRel("all-movies")
+                    );
+
+                    return ResponseEntity.ok(model);
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -63,12 +108,23 @@ public class MovieController {
     }
 
     @GetMapping("/search")
-    public List<Movie> searchMovies(@RequestParam String title) {
-        return movieService.searchMovies(title);
+    public CollectionModel<EntityModel<Movie>> searchMovies(@RequestParam String title) {
+        List<EntityModel<Movie>> movies = movieService.searchMovies(title)
+                .stream()
+                .map(movie -> EntityModel.of(movie,
+                        linkTo(methodOn(MovieController.class).getMovieById(movie.getId())).withSelfRel()
+                ))
+                .toList();
+
+        return CollectionModel.of(
+                movies,
+                linkTo(methodOn(MovieController.class).searchMovies(title)).withSelfRel(),
+                linkTo(methodOn(MovieController.class).getAllMovies()).withRel("all-movies")
+        );
     }
 
     @GetMapping("/omdb")
-    public ResponseEntity<Movie> getMovieFromOmdb(
+    public ResponseEntity<EntityModel<Movie>> getMovieFromOmdb(
             @RequestParam String title) {
 
         Movie movie = movieService.getOrFetchMovie(title);
@@ -77,6 +133,17 @@ public class MovieController {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok(movie);
+        EntityModel<Movie> model = EntityModel.of(
+                movie,
+                linkTo(methodOn(MovieController.class)
+                        .getMovieById(movie.getId()))
+                        .withSelfRel(),
+
+                linkTo(methodOn(MovieController.class)
+                        .getAllMovies())
+                        .withRel("all-movies")
+        );
+
+        return ResponseEntity.ok(model);
     }
 }

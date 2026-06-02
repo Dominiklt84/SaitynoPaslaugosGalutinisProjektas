@@ -13,6 +13,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven.KinoFilmai [clean].executor": "Run",
+    "Maven.KinoFilmai [compile].executor": "Run",
     "Maven.KinoFilmai [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.KinoFilmaiApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.016 s -- in lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.KinoFilmaiApplicationTests
