@@ -4,6 +4,7 @@ import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.dto.OmdbMovieRes
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.mapper.OmdbMovieMapper;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.Movie;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.repository.MovieRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,23 +42,33 @@ public class MovieService {
     }
 
     public List<Movie> searchMovies(String title) {
-        return movieRepository.findByTitle(title);
+        return movieRepository.findByTitleIgnoreCase(title);
     }
 
+    @Cacheable(value = "movies", key = "#title.toLowerCase().trim()")
     public Movie getOrFetchMovie(String title) {
-        List<Movie> movies = movieRepository.findByTitle(title);
 
-        if (!movies.isEmpty()) {
-            return movies.get(0);
+        List<Movie> existingByRequestTitle =
+                movieRepository.findByTitleIgnoreCase(title);
+
+        if (!existingByRequestTitle.isEmpty()) {
+            return existingByRequestTitle.get(0);
         }
 
-        OmdbMovieResponse response = omdbService.searchMovieByTitle(title);
+        Movie movie = omdbMovieMapper.toMovie(
+                omdbService.searchMovieByTitle(title)
+        );
 
-        if (response == null || "False".equalsIgnoreCase(response.getResponse())) {
+        if (movie == null) {
             return null;
         }
 
-        Movie movie = omdbMovieMapper.toMovie(response);
+        List<Movie> existingByRealTitle =
+                movieRepository.findByTitleIgnoreCase(movie.getTitle());
+
+        if (!existingByRealTitle.isEmpty()) {
+            return existingByRealTitle.get(0);
+        }
 
         return movieRepository.save(movie);
     }

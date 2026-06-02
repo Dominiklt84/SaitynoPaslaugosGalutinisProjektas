@@ -46,19 +46,30 @@ CREATE TABLE writer (
 CREATE TABLE movie (
                        movie_id BIGINT NOT NULL AUTO_INCREMENT,
                        rated_id BIGINT NOT NULL,
+
                        title VARCHAR(255) NOT NULL,
                        movie_year VARCHAR(10) NOT NULL,
                        released VARCHAR(50) NOT NULL,
                        runtime VARCHAR(50) NOT NULL,
+
                        plot VARCHAR(2000) NOT NULL,
                        awards VARCHAR(1000),
                        poster VARCHAR(1000),
+
                        PRIMARY KEY (movie_id),
+
+                       CONSTRAINT uk_movie_title_year
+                           UNIQUE (title, movie_year),
+
                        KEY idx_movie_rated_id (rated_id),
+
                        CONSTRAINT fk_movie_rated
                            FOREIGN KEY (rated_id)
                                REFERENCES rated (rated_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_lithuanian_ci;
+
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_lithuanian_ci;
 
 CREATE TABLE rating (
                         rating_id BIGINT NOT NULL AUTO_INCREMENT,
