@@ -16,8 +16,8 @@ public class OmdbService {
     @Value("${omdb.api.url}")
     private String apiUrl;
 
-    public OmdbService() {
-        this.restClient = RestClient.create();
+    public OmdbService(RestClient restClient) {
+        this.restClient = restClient;
     }
 
     public OmdbMovieResponse searchMovieByTitle(String title) {
@@ -26,5 +26,4 @@ public class OmdbService {
                 .retrieve()
                 .body(OmdbMovieResponse.class);
     }
-
 }

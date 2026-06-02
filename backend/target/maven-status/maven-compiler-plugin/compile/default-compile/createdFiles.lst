@@ -1,10 +1,10 @@
+lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\factory\OmdbMovieFactory.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\MovieRepository.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\RatedRepository.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\model\Director.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\GenreRepository.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\DirectorRepository.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\controller\MovieController.class
-lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\mapper\OmdbMovieMapper.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\service\OmdbService.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\model\MovieView.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\model\Writer.class
@@ -21,6 +21,7 @@ lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\model\Movie.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\ActorRepository.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\model\Language.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\repository\RatingRepository.class
+lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\config\RestClientConfig.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\service\MovieService.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\dto\OmdbMovieResponse.class
 lt\viko\eif\dalencinovic\lstarkus\tsaviscevas\KinoFilmai\KinoFilmaiApplication.class

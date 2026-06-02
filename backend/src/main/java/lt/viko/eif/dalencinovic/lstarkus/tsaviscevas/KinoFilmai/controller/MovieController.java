@@ -79,9 +79,17 @@ public class MovieController {
 
         return movieService.getMovieById(id)
                 .map(movie -> {
-                    movie.setTitle(updatedMovie.getTitle());
-                    movie.setYear(updatedMovie.getYear());
-                    movie.setPlot(updatedMovie.getPlot());
+                    if (updatedMovie.getTitle() != null) {
+                        movie.setTitle(updatedMovie.getTitle());
+                    }
+
+                    if (updatedMovie.getYear() != null) {
+                        movie.setYear(updatedMovie.getYear());
+                    }
+
+                    if (updatedMovie.getPlot() != null) {
+                        movie.setPlot(updatedMovie.getPlot());
+                    }
 
                     Movie savedMovie = movieService.saveMovie(movie);
 

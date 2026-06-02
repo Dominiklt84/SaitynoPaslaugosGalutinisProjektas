@@ -1,7 +1,6 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service;
 
-import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.dto.OmdbMovieResponse;
-import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.mapper.OmdbMovieMapper;
+import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.factory.OmdbMovieFactory;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.Movie;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.repository.MovieRepository;
 import org.springframework.cache.annotation.Cacheable;
@@ -15,11 +14,11 @@ public class MovieService {
 
     private final MovieRepository movieRepository;
     private final OmdbService omdbService;
-    private final OmdbMovieMapper omdbMovieMapper;
+    private final OmdbMovieFactory omdbMovieMapper;
 
     public MovieService(MovieRepository movieRepository,
                         OmdbService omdbService,
-                        OmdbMovieMapper omdbMovieMapper) {
+                        OmdbMovieFactory omdbMovieMapper) {
         this.movieRepository = movieRepository;
         this.omdbService = omdbService;
         this.omdbMovieMapper = omdbMovieMapper;
