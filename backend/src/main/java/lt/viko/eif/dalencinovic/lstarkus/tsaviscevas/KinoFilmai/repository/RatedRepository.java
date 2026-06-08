@@ -11,6 +11,6 @@ import java.util.Optional;
  */
 @Repository
 public interface RatedRepository extends JpaRepository<Rated, Long> {
-    Optional<Rated> findByTitle(String title);
 
+    Optional<Rated> findByTitle(String title);
 }

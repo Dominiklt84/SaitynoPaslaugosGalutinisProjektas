@@ -25,10 +25,20 @@ public class Genre extends BaseEntity {
         this.title = title;
     }
 
+    /**
+     * Grąžina žanro pavadinimą.
+     *
+     * @return žanro pavadinimas
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Nustato žanro pavadinimą.
+     *
+     * @param title žanro pavadinimas
+     */
     public void setTitle(String title) {
         this.title = title;
     }

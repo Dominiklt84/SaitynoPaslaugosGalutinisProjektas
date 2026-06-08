@@ -25,10 +25,20 @@ public class Country extends BaseEntity {
         this.name = name;
     }
 
+    /**
+     * Grąžina šalies pavadinimą.
+     *
+     * @return šalies pavadinimas
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Nustato šalies pavadinimą.
+     *
+     * @param name šalies pavadinimas
+     */
     public void setName(String name) {
         this.name = name;
     }

@@ -13,25 +13,25 @@ import jakarta.persistence.MappedSuperclass;
 public abstract class BaseEntity {
 
     /**
-     * Primary key identifier.
+     * Unikalus entity identifikatorius.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
-     * Returns entity identifier.
+     * Grąžina entity identifikatorių.
      *
-     * @return entity ID
+     * @return entity identifikatorius
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * Sets entity identifier.
+     * Nustato entity identifikatorių.
      *
-     * @param id entity ID
+     * @param id entity identifikatorius
      */
     public void setId(Long id) {
         this.id = id;

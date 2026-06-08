@@ -25,10 +25,20 @@ public class Language extends BaseEntity {
         this.name = name;
     }
 
+    /**
+     * Grąžina kalbos pavadinimą.
+     *
+     * @return kalbos pavadinimas
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Nustato kalbos pavadinimą.
+     *
+     * @param name kalbos pavadinimas
+     */
     public void setName(String name) {
         this.name = name;
     }

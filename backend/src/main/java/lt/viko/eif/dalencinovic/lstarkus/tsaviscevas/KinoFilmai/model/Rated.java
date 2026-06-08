@@ -22,10 +22,20 @@ public class Rated extends BaseEntity {
         this.title = title;
     }
 
+    /**
+     * Grąžina filmo amžiaus cenzo pavadinimą.
+     *
+     * @return filmo amžiaus cenzo pavadinimas
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Nustato filmo amžiaus cenzo pavadinimą.
+     *
+     * @param title filmo amžiaus cenzo pavadinimas
+     */
     public void setTitle(String title) {
         this.title = title;
     }

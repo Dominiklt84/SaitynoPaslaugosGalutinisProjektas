@@ -28,18 +28,38 @@ public class Writer extends BaseEntity {
         this.lastName = lastName;
     }
 
+    /**
+     * Grąžina scenaristo vardą.
+     *
+     * @return scenaristo vardas
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Grąžina scenaristo pavardę.
+     *
+     * @return scenaristo pavardė
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Nustato scenaristo vardą.
+     *
+     * @param firstName scenaristo vardas
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Nustato scenaristo pavardę.
+     *
+     * @param lastName scenaristo pavardė
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }

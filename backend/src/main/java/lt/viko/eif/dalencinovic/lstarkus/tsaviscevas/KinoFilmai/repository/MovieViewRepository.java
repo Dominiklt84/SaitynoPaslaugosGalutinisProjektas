@@ -26,7 +26,6 @@ public interface MovieViewRepository extends JpaRepository<MovieView, Long> {
     """)
     List<MovieView> findTopToday();
 
-
     @Query("""
     SELECT mv
     FROM MovieView mv

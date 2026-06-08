@@ -24,6 +24,13 @@ public class OmdbService {
         this.restClient = restClient;
     }
 
+    /**
+     * Ieško filmo pagal nurodytą pavadinimą naudodamas OMDb API
+     * ir grąžina gautus duomenis.
+     *
+     * @param title filmo pavadinimas
+     * @return OMDb API grąžintas filmo duomenų objektas
+     */
     public OmdbMovieResponse searchMovieByTitle(String title) {
         return restClient.get()
                 .uri(apiUrl + "?t={title}&apikey={apiKey}", title, apiKey)

@@ -28,18 +28,38 @@ public class Director extends BaseEntity {
         this.lastName = lastName;
     }
 
+    /**
+     * Grąžina režisieriaus vardą.
+     *
+     * @return režisieriaus vardas
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Grąžina režisieriaus pavardę.
+     *
+     * @return režisieriaus pavardė
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Nustato režisieriaus vardą.
+     *
+     * @param firstName režisieriaus vardas
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Nustato režisieriaus pavardę.
+     *
+     * @param lastName režisieriaus pavardė
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }

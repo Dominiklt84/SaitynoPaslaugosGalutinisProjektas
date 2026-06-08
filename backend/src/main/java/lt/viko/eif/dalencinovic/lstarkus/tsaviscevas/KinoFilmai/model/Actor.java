@@ -28,18 +28,38 @@ public class Actor extends BaseEntity {
         this.lastName = lastName;
     }
 
+    /**
+     * Grąžina aktoriaus vardą.
+     *
+     * @return aktoriaus vardas
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Grąžina aktoriaus pavardę.
+     *
+     * @return aktoriaus pavardė
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Nustato aktoriaus vardą.
+     *
+     * @param firstName aktoriaus vardas
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Nustato aktoriaus pavardę.
+     *
+     * @param lastName aktoriaus pavardė
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
