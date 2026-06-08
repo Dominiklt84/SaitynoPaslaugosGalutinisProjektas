@@ -1,5 +1,6 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service;
 
+import jakarta.transaction.Transactional;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.factory.OmdbMovieFactory;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.Movie;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.repository.MovieRepository;
@@ -76,8 +77,12 @@ public class MovieService {
      *
      * @param id šalinamo filmo identifikatorius
      */
+    @Transactional
     public void deleteMovie(Long id) {
-        movieRepository.deleteById(id);
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Movie not found"));
+
+        movieRepository.delete(movie);
     }
 
     /**

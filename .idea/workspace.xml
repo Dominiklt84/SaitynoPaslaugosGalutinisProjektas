@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd46131-b901-4e6f-a4a4-81f0410ffe8d" name="Changes" comment="Sukurtas movie controller. REST POST/GET/DELETE metodai.">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/HELP.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.java" afterDir="false" />
@@ -81,36 +80,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ModelTest.executor": "Coverage",
-    "JUnit.MovieControllerTest.executor": "Coverage",
-    "JUnit.MovieServiceTest.executor": "Coverage",
-    "JUnit.MovieViewServiceTest.executor": "Coverage",
-    "JUnit.OmdbMovieFactoryTest.executor": "Coverage",
-    "JUnit.OmdbMovieMapperTest.executor": "Coverage",
-    "JUnit.OmdbMovieResponseTest.executor": "Coverage",
-    "JUnit.RestClientConfigTest.executor": "Coverage",
-    "Maven.KinoFilmai [clean].executor": "Run",
-    "Maven.KinoFilmai [compile].executor": "Run",
-    "Maven.KinoFilmai [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.KinoFilmaiApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ModelTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieViewServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieFactoryTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieMapperTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieResponseTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.RestClientConfigTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.KinoFilmai [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KinoFilmai [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KinoFilmai [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.KinoFilmaiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="KinoFilmaiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="KinoFilmai" />
@@ -139,7 +138,9 @@
       <workItem from="1780598569903" duration="96000" />
       <workItem from="1780664811397" duration="1074000" />
       <workItem from="1780665989839" duration="131000" />
-      <workItem from="1780930913082" duration="9613000" />
+      <workItem from="1780930913082" duration="9880000" />
+      <workItem from="1780941635493" duration="512000" />
+      <workItem from="1780942225310" duration="1010000" />
     </task>
     <servers />
   </component>

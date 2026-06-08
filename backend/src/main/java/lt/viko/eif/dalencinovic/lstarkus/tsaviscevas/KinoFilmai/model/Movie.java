@@ -39,6 +39,10 @@ public class Movie extends BaseEntity {
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private List<Rating> ratings;
 
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MovieView> movieViews;
+
+
     @ManyToMany
     @JoinTable(
             name = "movie_actors",
