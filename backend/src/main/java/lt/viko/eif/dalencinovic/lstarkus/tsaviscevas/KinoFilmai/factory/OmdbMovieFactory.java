@@ -9,7 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Maps OMDb API response data to project entities.
+ * Konvertuoja OMDb API atsakymus į objektus.
+ * Užtikrina duomenų transformavimą.
  */
 @Component
 public class OmdbMovieFactory {
@@ -22,6 +23,18 @@ public class OmdbMovieFactory {
     private final LanguageRepository languageRepository;
     private final CountryRepository countryRepository;
 
+    /**
+     * Sukuria OMDb filmų objektų factory.
+     * Inicijuoja visas reikalingas saugyklas duomenų paieškai ir išsaugojimui.
+     *
+     * @param ratedRepository    amžiaus reitingų saugykla
+     * @param genreRepository    žanrų saugykla
+     * @param actorRepository    aktorių saugykla
+     * @param directorRepository režisierių saugykla
+     * @param writerRepository   scenaristų saugykla
+     * @param languageRepository kalbų saugykla
+     * @param countryRepository  šalių saugykla
+     */
     public OmdbMovieFactory(RatedRepository ratedRepository,
                             GenreRepository genreRepository,
                             ActorRepository actorRepository,
@@ -38,6 +51,12 @@ public class OmdbMovieFactory {
         this.countryRepository = countryRepository;
     }
 
+    /****
+     * Konvertuoja OMDb API atsakymą į Movie objektą.
+     *
+     * @param response OMDb API atsakymo objektas
+     * @return sukurtas Movie objektas arba null, jei atsakymas negaliojantis
+     */
     public Movie toMovie(OmdbMovieResponse response) {
 
         if (response == null ||
@@ -68,6 +87,14 @@ public class OmdbMovieFactory {
         return movie;
     }
 
+    /**
+     * Suranda arba sukuria filmo amžiaus reitingą.
+     * Jei reitingas nenurodytas arba neprieinamas,
+     * naudojama reikšmė „Unknown“.
+     *
+     * @param ratedTitle amžiaus reitingo pavadinimas
+     * @return rastas arba naujai sukurtas Rated objektas
+     */
     private Rated resolveRated(String ratedTitle) {
 
         if (isBlankOrNotAvailable(ratedTitle)) {
@@ -88,6 +115,14 @@ public class OmdbMovieFactory {
                 );
     }
 
+    /**
+     * Konvertuoja žanrų tekstinį sąrašą į Genre objektų sąrašą.
+     * Kiekvienas žanras surandamas duomenų bazėje arba sukuriamas,
+     * jei toks įrašas dar neegzistuoja.
+     *
+     * @param genreText žanrų sąrašas tekstiniu formatu
+     * @return žanrų objektų sąrašas
+     */
     private List<Genre> resolveGenres(String genreText) {
         List<Genre> genres = new ArrayList<>();
 
@@ -100,6 +135,14 @@ public class OmdbMovieFactory {
         return genres;
     }
 
+    /**
+     * Konvertuoja aktorių tekstinį sąrašą į Actor objektų sąrašą.
+     * Kiekvienas aktorius surandamas duomenų bazėje pagal vardą ir pavardę
+     * arba sukuriamas, jei toks įrašas dar neegzistuoja.
+     *
+     * @param actorText aktorių sąrašas tekstiniu formatu
+     * @return aktorių objektų sąrašas
+     */
     private List<Actor> resolveActors(String actorText) {
         List<Actor> actors = new ArrayList<>();
 
@@ -114,6 +157,14 @@ public class OmdbMovieFactory {
         return actors;
     }
 
+    /**
+     * Konvertuoja režisierių tekstinį sąrašą į Director objektų sąrašą.
+     * Kiekvienas režisierius surandamas duomenų bazėje pagal vardą ir pavardę
+     * arba sukuriamas, jei toks įrašas dar neegzistuoja.
+     *
+     * @param directorText režisierių sąrašas tekstiniu formatu
+     * @return režisierių objektų sąrašas
+     */
     private List<Director> resolveDirectors(String directorText) {
         List<Director> directors = new ArrayList<>();
 
@@ -128,6 +179,14 @@ public class OmdbMovieFactory {
         return directors;
     }
 
+    /**
+     * Konvertuoja scenaristų tekstinį sąrašą į Writer objektų sąrašą.
+     * Kiekvienas scenaristas surandamas duomenų bazėje pagal vardą ir pavardę
+     * arba sukuriamas, jei toks įrašas dar neegzistuoja.
+     *
+     * @param writerText scenaristų sąrašas tekstiniu formatu
+     * @return scenaristų objektų sąrašas
+     */
     private List<Writer> resolveWriters(String writerText) {
         List<Writer> writers = new ArrayList<>();
 
@@ -142,6 +201,14 @@ public class OmdbMovieFactory {
         return writers;
     }
 
+    /**
+     * Konvertuoja kalbų tekstinį sąrašą į Language objektų sąrašą.
+     * Kiekviena kalba surandama duomenų bazėje arba sukuriama,
+     * jei toks įrašas dar neegzistuoja.
+     *
+     * @param languageText kalbų sąrašas tekstiniu formatu
+     * @return kalbų objektų sąrašas
+     */
     private List<Language> resolveLanguages(String languageText) {
         List<Language> languages = new ArrayList<>();
 
@@ -154,6 +221,14 @@ public class OmdbMovieFactory {
         return languages;
     }
 
+    /**
+     * Konvertuoja šalių tekstinį sąrašą į Country objektų sąrašą.
+     * Kiekviena šalis surandama duomenų bazėje arba sukuriama,
+     * jei toks įrašas dar neegzistuoja.
+     *
+     * @param countryText šalių sąrašas tekstiniu formatu
+     * @return šalių objektų sąrašas
+     */
     private List<Country> resolveCountries(String countryText) {
         List<Country> countries = new ArrayList<>();
 
@@ -166,6 +241,14 @@ public class OmdbMovieFactory {
         return countries;
     }
 
+    /**
+     * Konvertuoja OMDb API vertinimų sąrašą į Rating objektų sąrašą.
+     * Kiekvienas vertinimas susiejamas su nurodytu filmu.
+     *
+     * @param ratingResponses OMDb API grąžintas vertinimų sąrašas
+     * @param movie           filmas, kuriam priskiriami vertinimai
+     * @return vertinimų objektų sąrašas
+     */
     private List<Rating> resolveRatings(List<OmdbMovieResponse.OmdbRatingResponse> ratingResponses,
                                         Movie movie) {
         List<Rating> ratings = new ArrayList<>();
@@ -185,6 +268,14 @@ public class OmdbMovieFactory {
         return ratings;
     }
 
+    /**
+     * Suskaido tekstinę reikšmę pagal kablelius ir pašalina
+     * nereikalingus tarpus.
+     *
+     * @param value tekstinė reikšmė, kurioje elementai atskirti kableliais
+     * @return suskaidytų reikšmių sąrašas; jei reikšmė tuščia arba
+     * neprieinama, grąžinamas tuščias sąrašas
+     */
     private List<String> splitValues(String value) {
         List<String> values = new ArrayList<>();
 
@@ -205,6 +296,14 @@ public class OmdbMovieFactory {
         return values;
     }
 
+    /**
+     * Suskaido pilną asmens vardą į vardą ir pavardę.
+     * Jei pavardė nenurodyta, grąžinama tuščia reikšmė.
+     *
+     * @param fullName pilnas asmens vardas
+     * @return masyvas, kuriame pirmas elementas yra vardas,
+     * o antras – pavardė
+     */
     private String[] splitName(String fullName) {
         String[] nameParts = fullName.trim().split(" ", 2);
         String firstName = nameParts[0];
@@ -213,6 +312,14 @@ public class OmdbMovieFactory {
         return new String[]{firstName, lastName};
     }
 
+    /**
+     * Patikrina, ar pateikta reikšmė yra tuščia,
+     * null arba žymima kaip neprieinama („N/A“).
+     *
+     * @param value tikrinama tekstinė reikšmė
+     * @return true, jei reikšmė yra null, tuščia arba „N/A“,
+     *         kitu atveju false
+     */
     private boolean isBlankOrNotAvailable(String value) {
         return value == null || value.isBlank() || value.equalsIgnoreCase("N/A");
     }

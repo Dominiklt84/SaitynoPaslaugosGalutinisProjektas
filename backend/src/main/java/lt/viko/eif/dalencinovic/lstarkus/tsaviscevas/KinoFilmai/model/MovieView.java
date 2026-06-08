@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
- * Represents movie view statistics.
+ * Entitity, saugantis informaciją apie filmo peržiūras.
  */
 @Entity
 @Table(name = "movie_view")

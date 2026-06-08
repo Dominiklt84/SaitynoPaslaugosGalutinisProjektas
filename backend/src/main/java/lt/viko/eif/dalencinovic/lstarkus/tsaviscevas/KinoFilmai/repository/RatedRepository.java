@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Rated entity.
- * Provides CRUD operations for Rated.
+ * Saugykla, skirta amžiaus reitingų duomenų valdymui.
  */
 @Repository
 public interface RatedRepository extends JpaRepository<Rated, Long> {

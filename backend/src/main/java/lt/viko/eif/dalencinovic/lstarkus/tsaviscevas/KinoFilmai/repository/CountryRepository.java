@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Country entity.
- * Provides CRUD operations for Country.
+ * Saugykla, skirta šalių duomenų valdymui.
  */
 @Repository
 public interface CountryRepository extends JpaRepository<Country, Long> {

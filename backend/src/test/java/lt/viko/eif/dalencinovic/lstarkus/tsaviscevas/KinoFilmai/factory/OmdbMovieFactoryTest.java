@@ -16,6 +16,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Testų klasė, tikrinanti OmdbMovieFactory veikimą.
+ */
 @ExtendWith(MockitoExtension.class)
 class OmdbMovieFactoryTest {
 

@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * Repository interface for Movie entity.
- * Provides CRUD operations for Movie.
+ * Saugykla, skirta filmų duomenų prieigai ir valdymui duomenų bazėje..
  */
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {

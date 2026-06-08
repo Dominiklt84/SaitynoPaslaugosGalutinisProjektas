@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 /**
- * Represents movie entity.
+ * Entity, aprašantis filmą ir jo pagrindines savybes.
  */
 @Entity
 @Table(name = "movie")

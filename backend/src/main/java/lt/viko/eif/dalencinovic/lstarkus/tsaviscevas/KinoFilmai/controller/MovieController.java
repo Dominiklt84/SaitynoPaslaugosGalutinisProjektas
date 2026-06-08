@@ -13,6 +13,10 @@ import org.springframework.hateoas.CollectionModel;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+/**
+ * REST valdiklis, skirtas filmų duomenų valdymui.
+ * Leidžia gauti, kurti, atnaujinti ir šalinti filmus.
+ */
 @CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/movies")
@@ -21,11 +25,22 @@ public class MovieController {
     private final MovieService movieService;
     private final MovieViewService movieViewService;
 
+    /**
+     * Sukuria naują valdiklio objektą.
+     *
+     * @param movieService servisas, atsakingas už filmų valdymą
+     * @param movieViewService servisas, atsakingas už filmų peržiūrų statistiką
+     */
     public MovieController(MovieService movieService, MovieViewService movieViewService) {
         this.movieService = movieService;
         this.movieViewService = movieViewService;
     }
 
+    /**
+     * Grąžina visų sistemoje esančių filmų sąrašą.
+     *
+     * @return filmų kolekcija su HATEOAS nuorodomis
+     */
     @GetMapping
     public CollectionModel<EntityModel<Movie>> getAllMovies() {
 
@@ -46,6 +61,12 @@ public class MovieController {
         );
     }
 
+    /**
+     * Suranda filmą pagal identifikatorių.
+     *
+     * @param id filmo identifikatorius
+     * @return rastas filmas arba 404 klaida, jei filmas nerastas
+     */
     @GetMapping("/{id}")
     public ResponseEntity<EntityModel<Movie>> getMovieById(@PathVariable Long id) {
 
@@ -63,6 +84,12 @@ public class MovieController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * Sukuria naują filmą ir išsaugo jį duomenų bazėje.
+     *
+     * @param movie kuriamas filmas
+     * @return sukurtas filmas su HATEOAS nuorodomis
+     */
     @PostMapping
     public ResponseEntity<EntityModel<Movie>> createMovie(@RequestBody Movie movie) {
         Movie savedMovie = movieService.saveMovie(movie);
@@ -77,6 +104,13 @@ public class MovieController {
                 .body(model);
     }
 
+    /**
+     * Atnaujina esamo filmo informaciją.
+     *
+     * @param id atnaujinamo filmo identifikatorius
+     * @param updatedMovie nauji filmo duomenys
+     * @return atnaujintas filmas arba 404 klaida, jei filmas nerastas
+     */
     @PutMapping("/{id}")
     public ResponseEntity<EntityModel<Movie>> updateMovie(@PathVariable Long id,
                                                           @RequestBody Movie updatedMovie) {
@@ -107,6 +141,12 @@ public class MovieController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    /**
+     * Pašalina filmą iš duomenų bazės.
+     *
+     * @param id šalinamo filmo identifikatorius
+     * @return 204 atsakymas sėkmingo pašalinimo atveju
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMovie(@PathVariable Long id) {
 
@@ -119,6 +159,12 @@ public class MovieController {
         return ResponseEntity.noContent().build();
     }
 
+    /**
+     * Ieško filmų pagal pavadinimą.
+     *
+     * @param title ieškomo filmo pavadinimas
+     * @return rastų filmų kolekcija
+     */
     @GetMapping("/search")
     public CollectionModel<EntityModel<Movie>> searchMovies(@RequestParam String title) {
         List<EntityModel<Movie>> movies = movieService.searchMovies(title)
@@ -135,6 +181,14 @@ public class MovieController {
         );
     }
 
+    /**
+     * Ieško filmo OMDb sistemoje.
+     * Jei filmas jau egzistuoja duomenų bazėje,
+     * grąžinamas esamas įrašas.
+     *
+     * @param title filmo pavadinimas
+     * @return rastas filmas arba 404 klaida
+     */
     @GetMapping("/omdb")
     public ResponseEntity<EntityModel<Movie>> getMovieFromOmdb(
             @RequestParam String title) {
@@ -159,6 +213,11 @@ public class MovieController {
         return ResponseEntity.ok(model);
     }
 
+    /**
+     * Grąžina populiariausius šiandien peržiūrėtus filmus.
+     *
+     * @return filmų sąrašas pagal dienos peržiūrų statistiką
+     */
     @GetMapping("/top/day")
     public ResponseEntity<CollectionModel<EntityModel<Movie>>> getTopTodayMovies() {
 
@@ -196,6 +255,11 @@ public class MovieController {
         return ResponseEntity.ok(model);
     }
 
+    /**
+     * Grąžina populiariausius šio mėnesio filmus.
+     *
+     * @return filmų sąrašas pagal mėnesio peržiūrų statistiką
+     */
     @GetMapping("/top/month")
     public ResponseEntity<CollectionModel<EntityModel<Movie>>> getTopMonthMovies() {
 

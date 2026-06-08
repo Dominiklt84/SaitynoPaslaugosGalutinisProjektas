@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
+/**
+ * Servisas, skirtas komunikacijai su OMDb API.
+ * Atlieka filmų paiešką ir duomenų gavimą iš išorinės sistemos.
+ */
 @Service
 public class OmdbService {
 

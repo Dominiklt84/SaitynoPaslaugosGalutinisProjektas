@@ -3,7 +3,7 @@ package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 import jakarta.persistence.*;
 
 /**
- * Represents movie age rating.
+ * Entitity, aprašantis filmo amžiaus cenzą.
  */
 @Entity
 @Table(name = "rated")

@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 /**
- * Represents movie writer.
+ * Entitity, aprašantis filmo scenaristą.
  */
 @Entity
 @Table(name = "writer")

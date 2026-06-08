@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 /**
- * Represents movie genre.
+ * Entitity, aprašantis filmo žanrą.
  */
 @Entity
 @Table(name = "genre")

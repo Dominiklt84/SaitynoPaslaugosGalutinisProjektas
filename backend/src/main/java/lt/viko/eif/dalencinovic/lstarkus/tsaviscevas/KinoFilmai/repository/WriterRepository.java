@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Writer entity.
- * Provides CRUD operations for Writer.
+ * Saugykla, skirta scenaristų duomenų valdymui.
  */
 @Repository
 public interface WriterRepository extends JpaRepository<Writer, Long> {

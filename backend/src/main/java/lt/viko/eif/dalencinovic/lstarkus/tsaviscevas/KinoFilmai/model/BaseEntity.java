@@ -6,7 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 /**
- * Base entity class that provides ID field for all entities.
+ * Bazinė entity klasė.
+ * Suteikia unikalų identifikatorių visiems paveldintiems objektams.
  */
 @MappedSuperclass
 public abstract class BaseEntity {

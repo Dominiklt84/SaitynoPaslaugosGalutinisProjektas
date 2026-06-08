@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Director entity.
- * Provides CRUD operations for Director.
+ * Saugykla, skirta režisierių duomenų valdymui.
  */
 @Repository
 public interface DirectorRepository extends JpaRepository<Director, Long> {

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 /**
- * Represents movie rating.
+ * Entitity, saugantis filmo vertinimo informaciją.
  */
 @Entity
 @Table(name = "rating")

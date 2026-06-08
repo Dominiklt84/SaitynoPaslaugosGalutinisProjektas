@@ -20,6 +20,9 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Testų klasė, tikrinanti MovieController funkcionalumą.
+ */
 class MovieControllerTest {
 
     private MovieService movieService;

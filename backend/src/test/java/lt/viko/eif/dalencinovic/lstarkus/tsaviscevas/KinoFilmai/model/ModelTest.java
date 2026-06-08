@@ -7,6 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Testų klasė, tikrinanti modelių objektų veikimą.
+ */
 class ModelTest {
 
     @Test

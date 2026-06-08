@@ -2,6 +2,10 @@ package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.dto;
 
 import java.util.List;
 
+/**
+ * DTO objektas, aprašantis OMDb API grąžinamą atsakymą.
+ * Naudojamas duomenų perdavimui tarp sistemų.
+ */
 public class OmdbMovieResponse {
 
     private String Title;

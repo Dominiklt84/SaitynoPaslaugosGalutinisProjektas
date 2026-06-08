@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Language entity.
- * Provides CRUD operations for Language.
+ * Saugykla, skirta kalbų duomenų valdymui.
  */
 @Repository
 public interface LanguageRepository extends JpaRepository<Language, Long> {

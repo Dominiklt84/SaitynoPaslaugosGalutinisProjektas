@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Genre entity.
- * Provides CRUD operations for Genre.
+ * Saugykla, skirta žanrų duomenų valdymui.
  */
 @Repository
 public interface GenreRepository extends JpaRepository<Genre, Long> {

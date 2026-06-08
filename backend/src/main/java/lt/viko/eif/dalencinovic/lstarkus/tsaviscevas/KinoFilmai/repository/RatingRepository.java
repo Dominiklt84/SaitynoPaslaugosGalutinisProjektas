@@ -5,8 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Repository interface for Rating entity.
- * Provides CRUD operations for Rating.
+ * Saugykla, skirta filmų vertinimų duomenų valdymui.
  */
 @Repository
 public interface RatingRepository extends JpaRepository<Rating, Long> {

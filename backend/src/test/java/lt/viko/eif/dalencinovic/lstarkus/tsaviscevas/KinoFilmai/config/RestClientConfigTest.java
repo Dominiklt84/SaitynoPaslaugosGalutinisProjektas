@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+/**
+ * Testų klasė, tikrinanti HTTP kliento konfigūraciją.
+ */
 class RestClientConfigTest {
 
     @Test

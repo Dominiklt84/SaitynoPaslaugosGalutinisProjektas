@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 /**
- * Represents movie country.
+ * Entitity, aprašantis filmo kilmės šalį.
  */
 @Entity
 @Table(name = "country")

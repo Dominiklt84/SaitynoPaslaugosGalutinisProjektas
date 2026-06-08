@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Repository interface for Actor entity.
- * Provides CRUD operations for Actor.
+ * Saugykla, skirta aktorių duomenų valdymui.
  */
 @Repository
 public interface ActorRepository extends JpaRepository<Actor, Long> {

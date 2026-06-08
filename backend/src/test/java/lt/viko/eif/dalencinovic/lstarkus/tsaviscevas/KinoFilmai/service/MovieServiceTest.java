@@ -16,6 +16,9 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * Testų klasė, tikrinanti MovieService veikimą.
+ */
 @ExtendWith(MockitoExtension.class)
 class MovieServiceTest {
 

@@ -8,15 +8,31 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Servisas, skirtas filmų peržiūrų statistikos valdymui.
+ * Registruoja ir analizuoja filmų peržiūrų informaciją.
+ */
 @Service
 public class MovieViewService {
 
     private final MovieViewRepository movieViewRepository;
 
+    /**
+     * Sukuria naują peržiūrų statistikos servisą.
+     *
+     * @param movieViewRepository peržiūrų duomenų saugykla
+     */
     public MovieViewService(MovieViewRepository movieViewRepository) {
         this.movieViewRepository = movieViewRepository;
     }
 
+    /**
+     * Užregistruoja filmo peržiūrą.
+     * Jei peržiūra tą dieną jau egzistuoja,
+     * padidinamas jos skaitiklis.
+     *
+     * @param movie peržiūrėtas filmas
+     */
     public void registerView(Movie movie) {
 
         LocalDate today = LocalDate.now();
@@ -44,6 +60,11 @@ public class MovieViewService {
         movieViewRepository.save(view);
     }
 
+    /**
+     * Grąžina populiariausius šiandien peržiūrėtus filmus.
+     *
+     * @return filmų sąrašas
+     */
     public List<Movie> getTopTodayMovies() {
 
         return movieViewRepository
@@ -54,7 +75,11 @@ public class MovieViewService {
                 .toList();
     }
 
-
+    /**
+     * Grąžina populiariausius šio mėnesio filmus.
+     *
+     * @return filmų sąrašas
+     */
     public List<Movie> getTopMonthMovies() {
 
         return movieViewRepository

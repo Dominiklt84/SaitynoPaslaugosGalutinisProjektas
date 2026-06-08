@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Repository interface for MovieView entity.
- * Provides CRUD operations for MovieView.
+ * Saugykla, skirta filmų peržiūrų duomenų valdymui.
  */
 @Repository
 public interface MovieViewRepository extends JpaRepository<MovieView, Long> {
