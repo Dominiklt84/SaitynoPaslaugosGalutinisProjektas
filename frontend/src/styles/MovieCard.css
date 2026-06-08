@@ -1,0 +1,20 @@
+.movie-card {
+    width: 300px;
+    background: #1e1e1e;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.movie-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #61dafb;
+    text-decoration: none;
+}

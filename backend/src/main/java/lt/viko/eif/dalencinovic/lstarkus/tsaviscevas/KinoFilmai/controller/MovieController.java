@@ -2,6 +2,7 @@ package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.controller;
 
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.Movie;
 import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.MovieService;
+import lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.MovieViewService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,14 +13,17 @@ import org.springframework.hateoas.CollectionModel;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/movies")
 public class MovieController {
 
     private final MovieService movieService;
+    private final MovieViewService movieViewService;
 
-    public MovieController(MovieService movieService) {
+    public MovieController(MovieService movieService, MovieViewService movieViewService) {
         this.movieService = movieService;
+        this.movieViewService = movieViewService;
     }
 
     @GetMapping
@@ -153,5 +157,17 @@ public class MovieController {
         );
 
         return ResponseEntity.ok(model);
+    }
+
+    @GetMapping("/top/day")
+    public List<Movie> getTopTodayMovies() {
+
+        return movieViewService.getTopTodayMovies();
+    }
+
+    @GetMapping("/top/month")
+    public List<Movie> getTopMonthMovies() {
+
+        return movieViewService.getTopMonthMovies();
     }
 }

@@ -1,0 +1,14 @@
+.home-page {
+    text-align: center;
+    padding: 40px;
+}
+
+.home-title {
+    margin-bottom: 30px;
+}
+
+.movie-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}

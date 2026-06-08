@@ -1,6 +1,8 @@
 package lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -8,20 +10,24 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "movie_view")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "movie_view_id")
+)
 public class MovieView extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
-    private LocalDateTime viewDate;
+    private LocalDate viewDate;
 
     private Integer viewCount;
 
     public MovieView() {
     }
 
-    public MovieView(Movie movie, LocalDateTime viewDate, Integer viewCount) {
+    public MovieView(Movie movie, LocalDate viewDate, Integer viewCount) {
         this.movie = movie;
         this.viewDate = viewDate;
         this.viewCount = viewCount;
@@ -31,7 +37,7 @@ public class MovieView extends BaseEntity {
         return movie;
     }
 
-    public LocalDateTime getViewDate() {
+    public LocalDate getViewDate() {
         return viewDate;
     }
 
@@ -43,7 +49,7 @@ public class MovieView extends BaseEntity {
         this.movie = movie;
     }
 
-    public void setViewDate(LocalDateTime viewDate) {
+    public void setViewDate(LocalDate viewDate) {
         this.viewDate = viewDate;
     }
 

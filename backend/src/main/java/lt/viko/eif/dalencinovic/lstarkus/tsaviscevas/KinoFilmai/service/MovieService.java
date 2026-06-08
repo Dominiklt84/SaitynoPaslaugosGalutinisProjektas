@@ -15,13 +15,15 @@ public class MovieService {
     private final MovieRepository movieRepository;
     private final OmdbService omdbService;
     private final OmdbMovieFactory omdbMovieMapper;
+    private final MovieViewService movieViewService;
 
     public MovieService(MovieRepository movieRepository,
                         OmdbService omdbService,
-                        OmdbMovieFactory omdbMovieMapper) {
+                        OmdbMovieFactory omdbMovieMapper, MovieViewService movieViewService) {
         this.movieRepository = movieRepository;
         this.omdbService = omdbService;
         this.omdbMovieMapper = omdbMovieMapper;
+        this.movieViewService = movieViewService;
     }
 
     public List<Movie> getAllMovies() {
@@ -29,7 +31,10 @@ public class MovieService {
     }
 
     public Optional<Movie> getMovieById(Long id) {
-        return movieRepository.findById(id);
+        Optional<Movie> movie = movieRepository.findById(id);
+
+        movie.ifPresent(movieViewService::registerView);
+        return movie;
     }
 
     public Movie saveMovie(Movie movie) {
