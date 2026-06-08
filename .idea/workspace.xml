@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd46131-b901-4e6f-a4a4-81f0410ffe8d" name="Changes" comment="Sukurtas movie controller. REST POST/GET/DELETE metodai.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,27 +32,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.KinoFilmai [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.KinoFilmai [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.KinoFilmai [install].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.KinoFilmaiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.ModelTest.executor": "Coverage",
+    "JUnit.MovieControllerTest.executor": "Coverage",
+    "JUnit.MovieServiceTest.executor": "Coverage",
+    "JUnit.MovieViewServiceTest.executor": "Coverage",
+    "JUnit.OmdbMovieFactoryTest.executor": "Coverage",
+    "JUnit.OmdbMovieMapperTest.executor": "Coverage",
+    "JUnit.OmdbMovieResponseTest.executor": "Coverage",
+    "JUnit.RestClientConfigTest.executor": "Coverage",
+    "Maven.KinoFilmai [clean].executor": "Run",
+    "Maven.KinoFilmai [compile].executor": "Run",
+    "Maven.KinoFilmai [install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.KinoFilmaiApplication.executor": "Coverage",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="KinoFilmaiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="KinoFilmai" />
@@ -78,11 +88,40 @@
       <updated>1780586080422</updated>
       <workItem from="1780586082108" duration="205000" />
       <workItem from="1780598569903" duration="96000" />
-      <workItem from="1780664811397" duration="450000" />
+      <workItem from="1780664811397" duration="1074000" />
+      <workItem from="1780665989839" duration="131000" />
+      <workItem from="1780930913082" duration="4342000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieServiceTest.ic" NAME="MovieServiceTest Coverage Results" MODIFIED="1780935146009" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieFactoryTest.ic" NAME="OmdbMovieFactoryTest Coverage Results" MODIFIED="1780935107849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.mapper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieResponseTest.ic" NAME="OmdbMovieResponseTest Coverage Results" MODIFIED="1780935008162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.dto.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$KinoFilmaiApplication.ic" NAME="KinoFilmaiApplication Coverage Results" MODIFIED="1780934906008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieControllerTest.ic" NAME="MovieControllerTest Coverage Results" MODIFIED="1780934973705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$RestClientConfigTest.ic" NAME="RestClientConfigTest Coverage Results" MODIFIED="1780934951863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.config.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieMapperTest.ic" NAME="OmdbMovieMapperTest Coverage Results" MODIFIED="1780934170583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.mapper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1780935128744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieViewServiceTest.ic" NAME="MovieViewServiceTest Coverage Results" MODIFIED="1780935175542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.*</FILTER>
+    </SUITE>
   </component>
 </project>
