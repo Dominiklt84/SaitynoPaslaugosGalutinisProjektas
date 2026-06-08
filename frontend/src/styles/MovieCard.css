@@ -5,6 +5,8 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 15px;
+     text-align: center;
+
 }
 
 .movie-card img {

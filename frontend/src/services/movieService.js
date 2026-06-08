@@ -41,3 +41,13 @@ export async function getTopMonthMovies() {
 
     return await response.json();
 }
+
+export async function getAllMovies() {
+
+    const response =
+        await fetch("http://localhost:8099/api/movies");
+
+    const data = await response.json();
+
+    return data._embedded?.movieList || [];
+}

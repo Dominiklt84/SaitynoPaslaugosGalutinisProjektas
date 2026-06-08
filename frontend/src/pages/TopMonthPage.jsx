@@ -4,6 +4,8 @@ import MovieCard from "../components/MovieCard";
 
 import { getTopMonthMovies } from "../services/movieService";
 
+import "../styles/TopMovies.css";
+
 function TopMonthPage() {
 
     const [movies, setMovies] = useState([]);
@@ -12,10 +14,9 @@ function TopMonthPage() {
 
         async function loadMovies() {
 
-            const data =
-                await getTopMonthMovies();
+            const data = await getTopMonthMovies();
 
-            setMovies(data);
+            setMovies(data._embedded.movieList);
         }
 
         loadMovies();
@@ -24,18 +25,24 @@ function TopMonthPage() {
 
     return (
 
-        <div>
+         <div className="top-page">
 
-            <h1>Top Movies This Month</h1>
+            <h1 className="page-title">
+                Top Movies This Month
+            </h1>
 
-            {movies.map(movie => (
+            <div className="movies-grid">
 
-                <MovieCard
-                    key={movie.id}
-                    movie={movie}
-                />
+                {movies.map(movie => (
 
-            ))}
+                    <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                    />
+
+                ))}
+
+            </div>
 
         </div>
     );

@@ -160,14 +160,76 @@ public class MovieController {
     }
 
     @GetMapping("/top/day")
-    public List<Movie> getTopTodayMovies() {
+    public ResponseEntity<CollectionModel<EntityModel<Movie>>> getTopTodayMovies() {
 
-        return movieViewService.getTopTodayMovies();
+        List<EntityModel<Movie>> movies =
+                movieViewService.getTopTodayMovies()
+                        .stream()
+                        .map(movie -> EntityModel.of(
+                                movie,
+                                linkTo(methodOn(MovieController.class)
+                                        .getMovieById(movie.getId()))
+                                        .withSelfRel()
+                        ))
+                        .toList();
+
+        if (movies.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        CollectionModel<EntityModel<Movie>> model =
+                CollectionModel.of(
+                        movies,
+                        linkTo(methodOn(MovieController.class)
+                                .getTopTodayMovies())
+                                .withSelfRel(),
+
+                        linkTo(methodOn(MovieController.class)
+                                .getTopMonthMovies())
+                                .withRel("top-month"),
+
+                        linkTo(methodOn(MovieController.class)
+                                .getAllMovies())
+                                .withRel("all-movies")
+                );
+
+        return ResponseEntity.ok(model);
     }
 
     @GetMapping("/top/month")
-    public List<Movie> getTopMonthMovies() {
+    public ResponseEntity<CollectionModel<EntityModel<Movie>>> getTopMonthMovies() {
 
-        return movieViewService.getTopMonthMovies();
+        List<EntityModel<Movie>> movies =
+                movieViewService.getTopMonthMovies()
+                        .stream()
+                        .map(movie -> EntityModel.of(
+                                movie,
+                                linkTo(methodOn(MovieController.class)
+                                        .getMovieById(movie.getId()))
+                                        .withSelfRel()
+                        ))
+                        .toList();
+
+        if (movies.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+
+        CollectionModel<EntityModel<Movie>> model =
+                CollectionModel.of(
+                        movies,
+                        linkTo(methodOn(MovieController.class)
+                                .getTopMonthMovies())
+                                .withSelfRel(),
+
+                        linkTo(methodOn(MovieController.class)
+                                .getTopTodayMovies())
+                                .withRel("top-day"),
+
+                        linkTo(methodOn(MovieController.class)
+                                .getAllMovies())
+                                .withRel("all-movies")
+                );
+
+        return ResponseEntity.ok(model);
     }
 }

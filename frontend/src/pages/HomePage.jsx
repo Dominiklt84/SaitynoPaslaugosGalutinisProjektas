@@ -5,14 +5,32 @@ import MovieCard from "../components/MovieCard";
 
 import {
     searchMovie,
+    getAllMovies
 } from "../services/movieService";
+
 
 import "../styles/HomePage.css";
 function HomePage() {
 
     const [movie, setMovie] = useState(null);
 
-   const handleSearch = async (title) => {
+    const [allMovies, setAllMovies] = useState([]);
+
+    useEffect(() => {
+
+        async function loadMovies() {
+
+            const data =
+                await getAllMovies();
+
+            setAllMovies(data);
+        }
+
+        loadMovies();
+
+    }, []);
+
+    const handleSearch = async (title) => {
 
     try {
 
@@ -33,17 +51,29 @@ function HomePage() {
     return (
         <div className="home-page">
 
-            <h1 className="home-title">
-                Movie Explorer
-            </h1>
-
             <SearchBar onSearch={handleSearch} />
-
 
             <div className="movie-container">
                 {movie && (
                     <MovieCard movie={movie} />
                 )}
+            </div>
+
+            <h2 className="section-title">
+                All Movies
+            </h2>
+
+            <div className="movies-grid">
+
+                {allMovies.map(movie => (
+
+                    <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                    />
+
+                ))}
+
             </div>
 
         </div>

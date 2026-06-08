@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import { getMovie } from "../services/movieService";
 
+import "../styles/MovieDetailsPage.css";
+
 function MovieDetailsPage() {
 
     const { id } = useParams();
@@ -27,97 +29,80 @@ function MovieDetailsPage() {
     }
 
     return (
-        <div>
+    <div className="details-page">
 
-            <img
-                src={movie.poster}
-                alt={movie.title}
-                width="300"
-            />
+        <img
+            className="details-poster"
+            src={movie.poster}
+            alt={movie.title}
+        />
 
-            <h1>{movie.title}</h1>
+        <div className="details-info">
+
+            <h1 className="details-title">
+                {movie.title}
+            </h1>
 
             <p><strong>Year:</strong> {movie.year}</p>
-
             <p><strong>Released:</strong> {movie.released}</p>
-
             <p><strong>Runtime:</strong> {movie.runtime}</p>
-
             <p><strong>Rated:</strong> {movie.rated?.title}</p>
-
             <p><strong>Awards:</strong> {movie.awards}</p>
 
-            <p><strong>Plot:</strong></p>
-            <p>{movie.plot}</p>
+            <div className="details-section">
 
-            <h3>Genres</h3>
+                <h3>Plot</h3>
 
-            <ul>
-                {movie.genres?.map(genre => (
-                    <li key={genre.id}>
-                        {genre.title}
-                    </li>
-                ))}
-            </ul>
+                <p>{movie.plot}</p>
 
-            <h3>Actors</h3>
+            </div>
 
-            <ul>
-                {movie.actors?.map(actor => (
-                    <li key={actor.id}>
-                        {actor.firstName} {actor.lastName}
-                    </li>
-                ))}
-            </ul>
+            <div className="details-section">
 
-            <h3>Directors</h3>
+                <h3>Genres</h3>
 
-            <ul>
-                {movie.directors?.map(director => (
-                    <li key={director.id}>
-                        {director.firstName} {director.lastName}
-                    </li>
-                ))}
-            </ul>
+                <ul className="details-list">
+                    {movie.genres?.map(genre => (
+                        <li key={genre.id}>
+                            {genre.title}
+                        </li>
+                    ))}
+                </ul>
 
-            <h3>Writers</h3>
-            <ul>
-            {movie.writers?.map(writer => (
-                <li key={writer.id}>
-                {writer.firstName} {writer.lastName}
-                </li>
-            ))}
-            </ul>
+            </div>
 
-            <h3>Countries</h3>
-            <ul>
-            {movie.countries?.map(country => (
-                <li key={country.id}>
-                {country.name}
-                </li>
-            ))}
-            </ul>
+            <div className="details-section">
 
-            <h3>Languages</h3>
-            <ul>
-            {movie.languages?.map(language => (
-                <li key={language.id}>
-                {language.name}
-                </li>
-            ))}
-            </ul>
+                <h3>Actors</h3>
 
-            <h3>Ratings</h3>
-            <ul>
-            {movie.ratings?.map(rating => (
-                <li key={rating.id}>
-                {rating.source}: {rating.value}
-                </li>
-            ))}
-            </ul>
+                <ul className="details-list">
+                    {movie.actors?.map(actor => (
+                        <li key={actor.id}>
+                            {actor.firstName} {actor.lastName}
+                        </li>
+                    ))}
+                </ul>
 
-                    </div>
-                );
+            </div>
+
+            <div className="details-section">
+
+                <h3>Directors</h3>
+
+                <ul className="details-list">
+                    {movie.directors?.map(director => (
+                        <li key={director.id}>
+                            {director.firstName} {director.lastName}
+                        </li>
+                    ))}
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+);
             }
 
 export default MovieDetailsPage;

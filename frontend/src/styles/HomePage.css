@@ -12,3 +12,15 @@
     justify-content: center;
     margin-top: 30px;
 }
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+}

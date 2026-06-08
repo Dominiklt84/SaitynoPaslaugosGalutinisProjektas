@@ -1,0 +1,46 @@
+.details-page {
+    max-width: 1200px;
+    margin: 40px auto;
+
+    display: flex;
+    gap: 50px;
+
+    color: white;
+}
+
+.details-poster {
+    width: 500px;
+    
+    border-radius: 12px;
+}
+
+.details-info {
+    flex: 1;
+}
+
+.details-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.details-info p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.details-section {
+    margin-top: 30px;
+}
+
+.details-section h3 {
+    margin-bottom: 10px;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+}
+
+.details-list li {
+    margin-bottom: 6px;
+}

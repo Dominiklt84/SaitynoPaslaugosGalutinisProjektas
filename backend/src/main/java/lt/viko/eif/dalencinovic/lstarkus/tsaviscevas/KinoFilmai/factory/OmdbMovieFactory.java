@@ -39,6 +39,13 @@ public class OmdbMovieFactory {
     }
 
     public Movie toMovie(OmdbMovieResponse response) {
+
+        if (response == null ||
+                !"True".equalsIgnoreCase(response.getResponse())) {
+
+            return null;
+        }
+
         Movie movie = new Movie();
 
         movie.setTitle(response.getTitle());
@@ -62,12 +69,23 @@ public class OmdbMovieFactory {
     }
 
     private Rated resolveRated(String ratedTitle) {
+
         if (isBlankOrNotAvailable(ratedTitle)) {
-            return null;
+
+            return ratedRepository.findByTitle("Unknown")
+                    .orElseGet(() ->
+                            ratedRepository.save(
+                                    new Rated("Unknown")
+                            )
+                    );
         }
 
         return ratedRepository.findByTitle(ratedTitle)
-                .orElseGet(() -> ratedRepository.save(new Rated(ratedTitle)));
+                .orElseGet(() ->
+                        ratedRepository.save(
+                                new Rated(ratedTitle)
+                        )
+                );
     }
 
     private List<Genre> resolveGenres(String genreText) {

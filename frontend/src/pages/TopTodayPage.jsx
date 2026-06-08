@@ -4,6 +4,8 @@ import MovieCard from "../components/MovieCard";
 
 import { getTopTodayMovies } from "../services/movieService";
 
+import "../styles/TopMovies.css";
+
 function TopTodayPage() {
 
     const [movies, setMovies] = useState([]);
@@ -12,10 +14,9 @@ function TopTodayPage() {
 
         async function loadMovies() {
 
-            const data =
-                await getTopTodayMovies();
+            const data = await getTopTodayMovies();
 
-            setMovies(data);
+            setMovies(data._embedded.movieList);
         }
 
         loadMovies();
@@ -24,18 +25,24 @@ function TopTodayPage() {
 
     return (
 
-        <div>
+        <div className="top-page">
 
-            <h1>Top Movies Today</h1>
+            <h1 className="page-title">
+                Top Movies Today
+            </h1>
 
-            {movies.map(movie => (
+            <div className="movies-grid">
 
-                <MovieCard
-                    key={movie.id}
-                    movie={movie}
-                />
+                {movies.map(movie => (
 
-            ))}
+                    <MovieCard
+                        key={movie.id}
+                        movie={movie}
+                    />
+
+                ))}
+
+            </div>
 
         </div>
     );
