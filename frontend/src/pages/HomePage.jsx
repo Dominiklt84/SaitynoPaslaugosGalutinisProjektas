@@ -10,9 +10,12 @@ import {
 
 
 import "../styles/HomePage.css";
+
 function HomePage() {
 
     const [movie, setMovie] = useState(null);
+
+    const [notFound, setNotFound] = useState(false);
 
     const [allMovies, setAllMovies] = useState([]);
 
@@ -20,8 +23,7 @@ function HomePage() {
 
         async function loadMovies() {
 
-            const data =
-                await getAllMovies();
+            const data = await getAllMovies();
 
             setAllMovies(data);
         }
@@ -36,15 +38,21 @@ function HomePage() {
 
         const result = await searchMovie(title);
 
-        console.log("MOVIE:", result);
-        console.log("TITLE:", result.title);
-        console.log("POSTER:", result.poster);
+        if (!result) {
+            setMovie(null);
+            setNotFound(true);
+            return;
+        }
 
         setMovie(result);
+        setNotFound(false);
 
     } catch (error) {
 
-        console.error("ERROR:", error);
+        setMovie(null);
+        setNotFound(true);
+
+        console.error(error);
     }
 };
 
@@ -53,6 +61,11 @@ function HomePage() {
 
             <SearchBar onSearch={handleSearch} />
 
+            {notFound && (
+                <h2 className="not-found">
+                    Movie not found
+                </h2>
+            )}
             <div className="movie-container">
                 {movie && (
                     <MovieCard movie={movie} />

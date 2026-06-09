@@ -1,16 +1,13 @@
 .details-page {
     max-width: 1200px;
     margin: 40px auto;
-
     display: flex;
     gap: 50px;
-
     color: white;
 }
 
 .details-poster {
     width: 500px;
-    
     border-radius: 12px;
 }
 

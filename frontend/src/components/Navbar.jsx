@@ -9,9 +9,7 @@ function Navbar() {
         <nav className="navbar">
 
             <div className="navbar-logo">
-
                 Movie Explorer
-
             </div>
 
             <div className="navbar-links">

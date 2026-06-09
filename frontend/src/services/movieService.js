@@ -7,9 +7,7 @@ export async function searchMovie(title) {
     );
 
     const data = await response.json();
-
-    console.log("API RESPONSE:", data);
-
+    
     return data;
 }
 
