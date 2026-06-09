@@ -119,6 +119,7 @@ class OmdbMovieFactoryTest {
     void toMovieIgnoresBlankAndNotAvailableValues() {
         OmdbMovieResponse response = new OmdbMovieResponse();
         response.setTitle("Minimal");
+        response.setResponse("True");
         response.setRated("N/A");
         response.setGenre(" ");
         response.setActors(null);
@@ -128,10 +129,15 @@ class OmdbMovieFactoryTest {
         response.setCountry("   ");
         response.setRatings(null);
 
+        when(ratedRepository.findByTitle("Unknown")).thenReturn(Optional.empty());
+        when(ratedRepository.save(any(Rated.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
         Movie movie = factory.toMovie(response);
 
+        assertNotNull(movie);
         assertEquals("Minimal", movie.getTitle());
-        assertNull(movie.getRated());
+        assertNotNull(movie.getRated());
+        assertEquals("Unknown", movie.getRated().getTitle());
         assertTrue(movie.getGenres().isEmpty());
         assertTrue(movie.getActors().isEmpty());
         assertTrue(movie.getDirectors().isEmpty());
@@ -139,7 +145,9 @@ class OmdbMovieFactoryTest {
         assertTrue(movie.getLanguages().isEmpty());
         assertTrue(movie.getCountries().isEmpty());
         assertTrue(movie.getRatings().isEmpty());
-        verifyNoInteractions(ratedRepository, genreRepository, actorRepository, directorRepository,
+        verify(ratedRepository).findByTitle("Unknown");
+        verify(ratedRepository).save(any(Rated.class));
+        verifyNoInteractions(genreRepository, actorRepository, directorRepository,
                 writerRepository, languageRepository, countryRepository);
     }
 
@@ -168,6 +176,7 @@ class OmdbMovieFactoryTest {
     private OmdbMovieResponse validResponse() {
         OmdbMovieResponse response = new OmdbMovieResponse();
         response.setTitle("Inception");
+        response.setResponse("True");
         response.setYear("2010");
         response.setReleased("16 Jul 2010");
         response.setRuntime("148 min");

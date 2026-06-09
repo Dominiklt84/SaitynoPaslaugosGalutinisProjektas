@@ -22,12 +22,20 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class MovieServiceTest {
 
-    @Mock private MovieRepository movieRepository;
-    @Mock private OmdbService omdbService;
-    @Mock private OmdbMovieFactory omdbMovieFactory;
-    @Mock private MovieViewService movieViewService;
+    @Mock
+    private MovieRepository movieRepository;
 
-    @InjectMocks private MovieService movieService;
+    @Mock
+    private OmdbService omdbService;
+
+    @Mock
+    private OmdbMovieFactory omdbMovieFactory;
+
+    @Mock
+    private MovieViewService movieViewService;
+
+    @InjectMocks
+    private MovieService movieService;
 
     @Test
     void getAllMoviesReturnsRepositoryMovies() {
@@ -35,6 +43,7 @@ class MovieServiceTest {
         when(movieRepository.findAll()).thenReturn(List.of(movie));
 
         assertEquals(List.of(movie), movieService.getAllMovies());
+
         verify(movieRepository).findAll();
     }
 
@@ -47,6 +56,7 @@ class MovieServiceTest {
 
         assertTrue(result.isPresent());
         assertEquals(movie, result.get());
+
         verify(movieViewService).registerView(movie);
     }
 
@@ -54,7 +64,10 @@ class MovieServiceTest {
     void getMovieByIdDoesNotRegisterViewWhenMovieMissing() {
         when(movieRepository.findById(99L)).thenReturn(Optional.empty());
 
-        assertTrue(movieService.getMovieById(99L).isEmpty());
+        Optional<Movie> result = movieService.getMovieById(99L);
+
+        assertTrue(result.isEmpty());
+
         verifyNoInteractions(movieViewService);
     }
 
@@ -62,33 +75,60 @@ class MovieServiceTest {
     void saveMovieDelegatesToRepository() {
         Movie movie = movie("Matrix", null);
         Movie saved = movie("Matrix", 5L);
+
         when(movieRepository.save(movie)).thenReturn(saved);
 
         assertEquals(saved, movieService.saveMovie(movie));
     }
 
     @Test
-    void deleteMovieDeletesById() {
+    void deleteMovieDeletesMovie() {
+        Movie movie = movie("Test", 7L);
+
+        when(movieRepository.findById(7L))
+                .thenReturn(Optional.of(movie));
+
         movieService.deleteMovie(7L);
-        verify(movieRepository).deleteById(7L);
+
+        verify(movieRepository).delete(movie);
+    }
+
+    @Test
+    void deleteMovieThrowsWhenMovieMissing() {
+        when(movieRepository.findById(7L))
+                .thenReturn(Optional.empty());
+
+        RuntimeException exception =
+                assertThrows(RuntimeException.class,
+                        () -> movieService.deleteMovie(7L));
+
+        assertEquals("Movie not found", exception.getMessage());
     }
 
     @Test
     void searchMoviesDelegatesToRepository() {
         Movie movie = movie("Interstellar", 2L);
-        when(movieRepository.findByTitleIgnoreCase("interstellar")).thenReturn(List.of(movie));
 
-        assertEquals(List.of(movie), movieService.searchMovies("interstellar"));
+        when(movieRepository.findByTitleIgnoreCase("interstellar"))
+                .thenReturn(List.of(movie));
+
+        assertEquals(
+                List.of(movie),
+                movieService.searchMovies("interstellar")
+        );
     }
 
     @Test
     void getOrFetchMovieReturnsExistingMovieByRequestedTitle() {
         Movie existing = movie("The Matrix", 1L);
-        when(movieRepository.findByTitleIgnoreCase("matrix")).thenReturn(List.of(existing));
+
+        when(movieRepository.findByTitleIgnoreCase("matrix"))
+                .thenReturn(List.of(existing));
 
         Movie result = movieService.getOrFetchMovie("matrix");
 
         assertEquals(existing, result);
+
         verifyNoInteractions(omdbService, omdbMovieFactory);
         verify(movieRepository, never()).save(any());
     }
@@ -96,40 +136,72 @@ class MovieServiceTest {
     @Test
     void getOrFetchMovieReturnsNullWhenOmdbMappingReturnsNull() {
         OmdbMovieResponse response = new OmdbMovieResponse();
-        when(movieRepository.findByTitleIgnoreCase("unknown")).thenReturn(List.of());
-        when(omdbService.searchMovieByTitle("unknown")).thenReturn(response);
-        when(omdbMovieFactory.toMovie(response)).thenReturn(null);
+
+        when(movieRepository.findByTitleIgnoreCase("unknown"))
+                .thenReturn(List.of());
+
+        when(omdbService.searchMovieByTitle("unknown"))
+                .thenReturn(response);
+
+        when(omdbMovieFactory.toMovie(response))
+                .thenReturn(null);
 
         assertNull(movieService.getOrFetchMovie("unknown"));
+
         verify(movieRepository, never()).save(any());
     }
 
     @Test
     void getOrFetchMovieReturnsExistingMovieByRealTitle() {
         OmdbMovieResponse response = new OmdbMovieResponse();
+
         Movie mapped = movie("The Matrix", null);
         Movie existing = movie("The Matrix", 3L);
-        when(movieRepository.findByTitleIgnoreCase("matrix")).thenReturn(List.of());
-        when(omdbService.searchMovieByTitle("matrix")).thenReturn(response);
-        when(omdbMovieFactory.toMovie(response)).thenReturn(mapped);
-        when(movieRepository.findByTitleIgnoreCase("The Matrix")).thenReturn(List.of(existing));
 
-        assertEquals(existing, movieService.getOrFetchMovie("matrix"));
+        when(movieRepository.findByTitleIgnoreCase("matrix"))
+                .thenReturn(List.of());
+
+        when(omdbService.searchMovieByTitle("matrix"))
+                .thenReturn(response);
+
+        when(omdbMovieFactory.toMovie(response))
+                .thenReturn(mapped);
+
+        when(movieRepository.findByTitleIgnoreCase("The Matrix"))
+                .thenReturn(List.of(existing));
+
+        Movie result = movieService.getOrFetchMovie("matrix");
+
+        assertEquals(existing, result);
+
         verify(movieRepository, never()).save(mapped);
     }
 
     @Test
     void getOrFetchMovieSavesNewMovieWhenNotExisting() {
         OmdbMovieResponse response = new OmdbMovieResponse();
+
         Movie mapped = movie("Arrival", null);
         Movie saved = movie("Arrival", 10L);
-        when(movieRepository.findByTitleIgnoreCase("arrival")).thenReturn(List.of());
-        when(omdbService.searchMovieByTitle("arrival")).thenReturn(response);
-        when(omdbMovieFactory.toMovie(response)).thenReturn(mapped);
-        when(movieRepository.findByTitleIgnoreCase("Arrival")).thenReturn(List.of());
-        when(movieRepository.save(mapped)).thenReturn(saved);
 
-        assertEquals(saved, movieService.getOrFetchMovie("arrival"));
+        when(movieRepository.findByTitleIgnoreCase("arrival"))
+                .thenReturn(List.of());
+
+        when(omdbService.searchMovieByTitle("arrival"))
+                .thenReturn(response);
+
+        when(omdbMovieFactory.toMovie(response))
+                .thenReturn(mapped);
+
+        when(movieRepository.findByTitleIgnoreCase("Arrival"))
+                .thenReturn(List.of());
+
+        when(movieRepository.save(mapped))
+                .thenReturn(saved);
+
+        Movie result = movieService.getOrFetchMovie("arrival");
+
+        assertEquals(saved, result);
     }
 
     private Movie movie(String title, Long id) {

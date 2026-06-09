@@ -8,11 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 /**
- * Testų klasė, tikrinanti MovieController funkcionalumą.
+ * Testų klasė, tikrinani MovieController veikimą.
  */
 class MovieControllerTest {
 
@@ -31,7 +31,9 @@ class MovieControllerTest {
 
     @BeforeEach
     void setUp() {
-        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(new MockHttpServletRequest()));
+        RequestContextHolder.setRequestAttributes(
+                new ServletRequestAttributes(new MockHttpServletRequest())
+        );
         movieService = mock(MovieService.class);
         movieViewService = mock(MovieViewService.class);
         controller = new MovieController(movieService, movieViewService);
@@ -84,6 +86,7 @@ class MovieControllerTest {
         ResponseEntity<EntityModel<Movie>> response = controller.createMovie(unsaved);
 
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
+        assertNotNull(response.getBody());
         assertEquals(saved, response.getBody().getContent());
         assertNotNull(response.getHeaders().getLocation());
     }
@@ -93,9 +96,11 @@ class MovieControllerTest {
         Movie existing = movie("Old", 3L);
         existing.setYear("1999");
         existing.setPlot("Old plot");
+
         Movie update = new Movie();
         update.setTitle("New");
         update.setPlot("New plot");
+
         when(movieService.getMovieById(3L)).thenReturn(Optional.of(existing));
         when(movieService.saveMovie(existing)).thenReturn(existing);
 
@@ -151,7 +156,11 @@ class MovieControllerTest {
         Movie movie = movie("Arrival", 6L);
         when(movieService.getOrFetchMovie("arrival")).thenReturn(movie);
 
-        assertEquals(HttpStatus.OK, controller.getMovieFromOmdb("arrival").getStatusCode());
+        ResponseEntity<EntityModel<Movie>> response = controller.getMovieFromOmdb("arrival");
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals(movie, response.getBody().getContent());
     }
 
     @Test
@@ -162,14 +171,57 @@ class MovieControllerTest {
     }
 
     @Test
-    void topEndpointsDelegateToMovieViewService() {
-        Movie today = movie("Today", 1L);
-        Movie month = movie("Month", 2L);
-        when(movieViewService.getTopTodayMovies()).thenReturn(List.of(today));
-        when(movieViewService.getTopMonthMovies()).thenReturn(List.of(month));
+    void getTopTodayMoviesReturnsOkWhenMoviesExist() {
+        Movie movie = movie("Today", 1L);
+        when(movieViewService.getTopTodayMovies()).thenReturn(List.of(movie));
 
-        assertEquals(List.of(today), controller.getTopTodayMovies());
-        assertEquals(List.of(month), controller.getTopMonthMovies());
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.getTopTodayMovies();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals(1, response.getBody().getContent().size());
+        assertTrue(response.getBody().getLink("self").isPresent());
+        assertTrue(response.getBody().getLink("top-month").isPresent());
+        assertTrue(response.getBody().getLink("all-movies").isPresent());
+        verify(movieViewService).getTopTodayMovies();
+    }
+
+    @Test
+    void getTopTodayMoviesReturnsNoContentWhenEmpty() {
+        when(movieViewService.getTopTodayMovies()).thenReturn(List.of());
+
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.getTopTodayMovies();
+
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+    }
+
+    @Test
+    void getTopMonthMoviesReturnsOkWhenMoviesExist() {
+        Movie movie = movie("Month", 2L);
+        when(movieViewService.getTopMonthMovies()).thenReturn(List.of(movie));
+
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.getTopMonthMovies();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals(1, response.getBody().getContent().size());
+        assertTrue(response.getBody().getLink("self").isPresent());
+        assertTrue(response.getBody().getLink("top-day").isPresent());
+        assertTrue(response.getBody().getLink("all-movies").isPresent());
+        verify(movieViewService).getTopMonthMovies();
+    }
+
+    @Test
+    void getTopMonthMoviesReturnsNoContentWhenEmpty() {
+        when(movieViewService.getTopMonthMovies()).thenReturn(List.of());
+
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.getTopMonthMovies();
+
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
     }
 
     private Movie movie(String title, Long id) {
