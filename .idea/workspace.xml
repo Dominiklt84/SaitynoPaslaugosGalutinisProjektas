@@ -6,53 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fdd46131-b901-4e6f-a4a4-81f0410ffe8d" name="Changes" comment="Sukurtas movie controller. REST POST/GET/DELETE metodai.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/factory/OmdbMovieFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/factory/OmdbMovieFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Actor.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Actor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Director.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Genre.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Genre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/MovieView.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/MovieView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Rating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/Writer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/ActorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/ActorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/CountryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/DirectorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/DirectorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/GenreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/GenreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/LanguageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/LanguageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieViewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/MovieViewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatedRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatedRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/RatingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/WriterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/repository/WriterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/mapper/OmdbMovieFactoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/ModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/ModelTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/KinoFilmaiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/config/RestClientConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/controller/MovieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse$OmdbRatingResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse$OmdbRatingResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/dto/OmdbMovieResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/factory/OmdbMovieFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/factory/OmdbMovieFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/model/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/MovieViewService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/service/OmdbService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectColorInfo">{
@@ -78,38 +31,95 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.KinoFilmaiApplicationTests.executor": "Coverage",
-    "JUnit.ModelTest.executor": "Coverage",
-    "JUnit.MovieControllerTest.executor": "Coverage",
-    "JUnit.MovieServiceTest.executor": "Coverage",
-    "JUnit.MovieViewServiceTest.executor": "Coverage",
-    "JUnit.OmdbMovieFactoryTest.executor": "Coverage",
-    "JUnit.OmdbMovieMapperTest.executor": "Coverage",
-    "JUnit.OmdbMovieResponseTest.executor": "Coverage",
-    "JUnit.RestClientConfigTest.executor": "Coverage",
-    "Maven.KinoFilmai [clean].executor": "Run",
-    "Maven.KinoFilmai [compile].executor": "Run",
-    "Maven.KinoFilmai [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.KinoFilmaiApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: movies.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: search.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: top_movies.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KinoFilmaiApplicationTests.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ModelTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MovieViewServiceTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieFactoryTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieMapperTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.OmdbMovieResponseTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.RestClientConfigTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.KinoFilmai [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KinoFilmai [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.KinoFilmai [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.KinoFilmaiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Spring Boot.KinoFilmaiApplication">
+    <configuration name="Feature: movies" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/src/test/resources/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/movies.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="KinoFilmai" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: movies" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: search" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/src/test/resources/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/search.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="KinoFilmai" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: search" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: top_movies" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="7" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/backend/src/test/resources/lt/viko/eif/dalencinovic/lstarkus/tsaviscevas/KinoFilmai/top_movies.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="KinoFilmai" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
+      <option name="SUGGESTED_NAME" value="Feature: top_movies" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KinoFilmaiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="KinoFilmai" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.KinoFilmaiApplication" />
@@ -117,6 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cucumber Java.Feature: top_movies" />
+        <item itemvalue="Cucumber Java.Feature: search" />
+        <item itemvalue="Cucumber Java.Feature: movies" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -141,7 +158,11 @@
       <workItem from="1780941635493" duration="512000" />
       <workItem from="1780942225310" duration="1228000" />
       <workItem from="1780943531501" duration="1514000" />
-      <workItem from="1781013639658" duration="3794000" />
+      <workItem from="1781013639658" duration="4438000" />
+      <workItem from="1781086999967" duration="231000" />
+      <workItem from="1781087246419" duration="1994000" />
+      <workItem from="1781091792795" duration="192000" />
+      <workItem from="1781452180947" duration="2969000" />
     </task>
     <servers />
   </component>
@@ -149,7 +170,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieServiceTest.ic" NAME="MovieServiceTest Coverage Results" MODIFIED="1781017301990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieServiceTest.ic" NAME="MovieServiceTest Coverage Results" MODIFIED="1781017479283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieFactoryTest.ic" NAME="OmdbMovieFactoryTest Coverage Results" MODIFIED="1781017455334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
@@ -158,23 +179,23 @@
     <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieResponseTest.ic" NAME="OmdbMovieResponseTest Coverage Results" MODIFIED="1781017443487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.dto.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$KinoFilmaiApplicationTests.ic" NAME="KinoFilmaiApplicationTests Coverage Results" MODIFIED="1781017363416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$KinoFilmaiApplicationTests.ic" NAME="KinoFilmaiApplicationTests Coverage Results" MODIFIED="1781088599777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$KinoFilmaiApplication.ic" NAME="KinoFilmaiApplication Coverage Results" MODIFIED="1781015919138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieControllerTest.ic" NAME="MovieControllerTest Coverage Results" MODIFIED="1781017432308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$KinoFilmaiApplication.ic" NAME="KinoFilmaiApplication Coverage Results" MODIFIED="1781087261373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$RestClientConfigTest.ic" NAME="RestClientConfigTest Coverage Results" MODIFIED="1781017422609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.config.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$OmdbMovieMapperTest.ic" NAME="OmdbMovieMapperTest Coverage Results" MODIFIED="1780934170583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.mapper.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1781017257132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$ModelTest.ic" NAME="ModelTest Coverage Results" MODIFIED="1781017466168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.model.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieViewServiceTest.ic" NAME="MovieViewServiceTest Coverage Results" MODIFIED="1781017328831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/SaitynoPaslaugosGalutinisProjektas_main$MovieViewServiceTest.ic" NAME="MovieViewServiceTest Coverage Results" MODIFIED="1781017507397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>lt.viko.eif.dalencinovic.lstarkus.tsaviscevas.KinoFilmai.service.*</FILTER>
     </SUITE>
   </component>

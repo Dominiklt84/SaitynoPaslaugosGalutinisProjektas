@@ -42,23 +42,31 @@ public class MovieController {
      * @return filmų kolekcija su HATEOAS nuorodomis
      */
     @GetMapping
-    public CollectionModel<EntityModel<Movie>> getAllMovies() {
+    public ResponseEntity<CollectionModel<EntityModel<Movie>>> getAllMovies() {
+
+        List<Movie> movieList = movieService.getAllMovies();
+
+        if (movieList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
 
         List<EntityModel<Movie>> movies =
-                movieService.getAllMovies()
-                        .stream()
+                movieList.stream()
                         .map(movie -> EntityModel.of(movie,
                                 linkTo(methodOn(MovieController.class)
                                         .getMovieById(movie.getId()))
                                         .withSelfRel()))
                         .toList();
 
-        return CollectionModel.of(
-                movies,
-                linkTo(methodOn(MovieController.class)
-                        .getAllMovies())
-                        .withSelfRel()
-        );
+        CollectionModel<EntityModel<Movie>> collectionModel =
+                CollectionModel.of(
+                        movies,
+                        linkTo(methodOn(MovieController.class)
+                                .getAllMovies())
+                                .withSelfRel()
+                );
+
+        return ResponseEntity.ok(collectionModel);
     }
 
     /**
@@ -166,19 +174,34 @@ public class MovieController {
      * @return rastų filmų kolekcija
      */
     @GetMapping("/search")
-    public CollectionModel<EntityModel<Movie>> searchMovies(@RequestParam String title) {
-        List<EntityModel<Movie>> movies = movieService.searchMovies(title)
-                .stream()
+    public ResponseEntity<CollectionModel<EntityModel<Movie>>> searchMovies(@RequestParam String title) {
+
+        List<Movie> movieList = movieService.searchMovies(title);
+
+        if (movieList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        List<EntityModel<Movie>> movies = movieList.stream()
                 .map(movie -> EntityModel.of(movie,
-                        linkTo(methodOn(MovieController.class).getMovieById(movie.getId())).withSelfRel()
+                        linkTo(methodOn(MovieController.class)
+                                .getMovieById(movie.getId()))
+                                .withSelfRel()
                 ))
                 .toList();
 
-        return CollectionModel.of(
-                movies,
-                linkTo(methodOn(MovieController.class).searchMovies(title)).withSelfRel(),
-                linkTo(methodOn(MovieController.class).getAllMovies()).withRel("all-movies")
-        );
+        CollectionModel<EntityModel<Movie>> collectionModel =
+                CollectionModel.of(
+                        movies,
+                        linkTo(methodOn(MovieController.class)
+                                .searchMovies(title))
+                                .withSelfRel(),
+                        linkTo(methodOn(MovieController.class)
+                                .getAllMovies())
+                                .withRel("all-movies")
+                );
+
+        return ResponseEntity.ok(collectionModel);
     }
 
     /**

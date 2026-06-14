@@ -49,7 +49,13 @@ class MovieControllerTest {
         Movie movie = movie("Inception", 1L);
         when(movieService.getAllMovies()).thenReturn(List.of(movie));
 
-        CollectionModel<EntityModel<Movie>> result = controller.getAllMovies();
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.getAllMovies();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+
+        CollectionModel<EntityModel<Movie>> result = response.getBody();
+        assertNotNull(result);
 
         assertEquals(1, result.getContent().size());
         assertTrue(result.getLink("self").isPresent());
@@ -144,7 +150,13 @@ class MovieControllerTest {
         Movie movie = movie("Arrival", 6L);
         when(movieService.searchMovies("arrival")).thenReturn(List.of(movie));
 
-        CollectionModel<EntityModel<Movie>> result = controller.searchMovies("arrival");
+        ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
+                controller.searchMovies("arrival");
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+
+        CollectionModel<EntityModel<Movie>> result = response.getBody();
+        assertNotNull(result);
 
         assertEquals(1, result.getContent().size());
         assertTrue(result.getLink("self").isPresent());
