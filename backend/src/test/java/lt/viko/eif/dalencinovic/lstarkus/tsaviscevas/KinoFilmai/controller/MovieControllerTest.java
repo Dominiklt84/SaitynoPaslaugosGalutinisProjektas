@@ -206,7 +206,7 @@ class MovieControllerTest {
         ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
                 controller.getTopTodayMovies();
 
-        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
     @Test
@@ -233,7 +233,7 @@ class MovieControllerTest {
         ResponseEntity<CollectionModel<EntityModel<Movie>>> response =
                 controller.getTopMonthMovies();
 
-        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
     private Movie movie(String title, Long id) {
