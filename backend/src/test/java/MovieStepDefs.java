@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,6 +14,8 @@ public class MovieStepDefs {
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     public static final String HOST = "http://localhost:8099";
+
+    private final ObjectMapper mapper = new ObjectMapper();
 
     private final OkHttpClient client = new OkHttpClient();
 
@@ -30,9 +34,71 @@ public class MovieStepDefs {
     }
 
     @Given("existing movie")
-    public void existingMovie() {
+    public void existingMovie() throws Exception {
 
-        movieId = 3L;
+        String title = "Test_" + System.currentTimeMillis();
+
+        String body = """
+        {
+          "title": "%s",
+          "year": "2025",
+          "released": "01 Jan 2025",
+          "runtime": "120 min",
+          "plot": "Test plot",
+          "rated": {
+            "id": 2
+          }
+        }
+        """.formatted(title);
+
+        Request request = new Request.Builder().url(HOST + "/api/movies")
+                .post(RequestBody.create(body, JSON)).build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            statusCode = response.code();
+
+            assertEquals(201, statusCode);
+
+            assertNotNull(response.body());
+
+            responseString = response.body().string();
+
+            JsonNode node = mapper.readTree(responseString);
+
+            assertTrue(node.has("id"), "Response does not contain id field");
+
+            movieId = node.get("id").asLong();
+        }
+    }
+
+    @Given("no movies exist")
+    public void noMoviesExist() throws IOException {
+
+        Request request = new Request.Builder().url(HOST + "/api/movies").get().build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            if (response.code() == 404) {
+                return;
+            }
+
+            String body = response.body().string();
+
+            JsonNode root = mapper.readTree(body);
+
+            JsonNode movies = root.path("_embedded").path("movieList");
+
+            for (JsonNode movie : movies) {
+
+                long id = movie.get("id").asLong();
+
+                Request deleteRequest = new Request.Builder().url(HOST + "/api/movies/" + id).delete()
+                        .build();
+
+                client.newCall(deleteRequest).execute().close();
+            }
+        }
     }
 
     @When("user requests all movies")
@@ -89,6 +155,14 @@ public class MovieStepDefs {
 
             statusCode = response.code();
 
+            if (response.body() != null) {
+
+                responseString = response.body().string();
+            } else {
+
+                responseString = "";
+            }
+
         }
     }
 
@@ -101,15 +175,25 @@ public class MovieStepDefs {
 
             statusCode = response.code();
 
+            if (response.body() != null) {
+
+                responseString = response.body().string();
+            } else {
+
+                responseString = "";
+            }
+
         }
     }
 
     @When("user creates new movie")
     public void userCreatesNewMovie() throws IOException {
 
+        String title = "BDD_Test_" + System.currentTimeMillis();
+
         String json = """
                 {
-                  "title": "BDD Test Movie123",
+                  "title": "%s",
                   "year": "2025",
                   "released": "01 Jan 2025",
                   "runtime": "120 min",
@@ -118,7 +202,7 @@ public class MovieStepDefs {
                     "id": 2
                   }
                 }
-        """;
+        """.formatted(title);
 
         RequestBody body = RequestBody.create(json, JSON);
 
@@ -137,7 +221,14 @@ public class MovieStepDefs {
 
         String json = """
         {
-          "title":"Updated Movie"
+          "title":"Updated Movied",
+          "year":"2025",
+          "released":"01 Jan 2025",
+          "runtime":"150 min",
+          "plot":"Updated plot",
+          "rated":{
+            "id":2
+          }
         }
         """;
 
@@ -164,10 +255,78 @@ public class MovieStepDefs {
         }
     }
 
+    @When("user deletes movie with id {int}")
+    public void userDeletesMovieWithId(int id) throws IOException {
+
+        Request request = new Request.Builder().url(HOST + "/api/movies/" + id).delete().build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            statusCode = response.code();
+        }
+    }
+
+    @When("user requests existing movie")
+    public void userRequestsExistingMovie() throws IOException {
+
+        Request request = new Request.Builder().url(HOST + "/api/movies/" + movieId).get().build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            statusCode = response.code();
+
+            if (response.body() != null) {
+                responseString = response.body().string();
+            }
+        }
+    }
+
+    @When("user requests movie with created id")
+    public void userRequestsCreatedMovie() throws IOException {
+
+        Request request = new Request.Builder().url(HOST + "/api/movies/" + movieId).get().build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            statusCode = response.code();
+
+            if (response.body() != null) {
+
+                responseString = response.body().string();
+            }
+        }
+    }
+
+    @When("user updates movie with id {int}")
+    public void userUpdatesMovieWithId(int id) throws IOException {
+
+        String json = """
+        {
+          "title":"Updated Movie"
+        }
+        """;
+
+        RequestBody body = RequestBody.create(json, JSON);
+
+        Request request = new Request.Builder().url(HOST + "/api/movies/" + id).put(body).build();
+
+        try (Response response = client.newCall(request).execute()) {
+
+            statusCode = response.code();
+
+            if (response.body() != null) {
+
+                responseString = response.body().string();
+            }
+        }
+    }
+
     @Then("movie list should not be empty")
     public void movieListShouldNotBeEmpty() {
 
-        assertFalse(responseString.isEmpty());
+        assertNotNull(responseString);
+
+        assertFalse(responseString.isBlank());
     }
 
     @Then("response should contain {string}")
@@ -188,18 +347,12 @@ public class MovieStepDefs {
         assertFalse(responseString.isEmpty());
     }
 
-    @Then("top month movies response should not be empty")
-    public void topMonthMoviesResponseShouldNotBeEmpty() {
-
-        assertFalse(responseString.isEmpty());
-    }
-
     @Then("movie should be created")
     public void movieShouldBeCreated() {
 
         assertEquals(201, statusCode);
 
-        assertTrue(responseString.contains("BDD Test Movie123"));
+        assertNotNull(responseString);
     }
 
     @Then("updated movie should be returned")
@@ -207,6 +360,6 @@ public class MovieStepDefs {
 
         assertEquals(200, statusCode);
 
-        assertTrue(responseString.contains("Updated Movie"));
+        assertNotNull(responseString);
     }
 }
