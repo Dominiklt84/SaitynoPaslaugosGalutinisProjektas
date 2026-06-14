@@ -233,7 +233,7 @@ public class MovieController {
                         .toList();
 
         if (movies.isEmpty()) {
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.notFound().build();
         }
 
         CollectionModel<EntityModel<Movie>> model =
@@ -275,7 +275,7 @@ public class MovieController {
                         .toList();
 
         if (movies.isEmpty()) {
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.notFound().build();
         }
 
         CollectionModel<EntityModel<Movie>> model =
